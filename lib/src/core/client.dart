@@ -333,7 +333,11 @@ class Web3Client {
     );
 
     if (transaction.isEIP1559) {
-      signed = prependTransactionType(0x02, signed);
+      if (transaction.isCeloTx) {
+        signed = prependTransactionType(0x7b, signed);
+      } else {
+        signed = prependTransactionType(0x02, signed);
+      }
     }
 
     return sendRawTransaction(signed);
@@ -420,6 +424,7 @@ class Web3Client {
     EtherAmount? maxPriorityFeePerGas,
     EtherAmount? maxFeePerGas,
     Uint8List? data,
+    EthereumAddress? feeCurrency,
     @Deprecated('Parameter is ignored') BlockNum? atBlock,
   }) async {
     final amountHex = await makeRPCCall<String>(
@@ -438,6 +443,7 @@ class Web3Client {
             'maxFeePerGas': '0x${maxFeePerGas.getInWei.toRadixString(16)}',
           if (value != null) 'value': '0x${value.getInWei.toRadixString(16)}',
           if (data != null) 'data': bytesToHex(data, include0x: true),
+          if (feeCurrency != null) 'feeCurrency': feeCurrency.with0x,
         },
       ],
     );
