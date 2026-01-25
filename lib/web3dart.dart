@@ -18,6 +18,7 @@ import 'package:wallet/wallet.dart';
 
 import 'package:pointycastle/key_derivators/pbkdf2.dart' as pbkdf2;
 import 'package:pointycastle/key_derivators/scrypt.dart' as scrypt;
+// ignore: implementation_imports
 import 'package:pointycastle/src/utils.dart' as p_utils;
 import 'package:web3dart/web3dart.dart' as secp256k1;
 

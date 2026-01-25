@@ -34,7 +34,7 @@ const _addressValidation = {
 };
 
 void main() {
-  bool _isValid(String address) {
+  bool isValid(String address) {
     try {
       EthereumAddress.fromHex(address);
       return true;
@@ -52,7 +52,7 @@ void main() {
 
     _addressValidation.forEach((address, valid) {
       test('parses $address -> valid $valid', () {
-        expect(_isValid(address), valid);
+        expect(isValid(address), valid);
       });
     });
   });

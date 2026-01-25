@@ -18,10 +18,10 @@ dependencies:
   eip55: ^1.0.3
   eip1559: ^0.6.2
   typed_data: ^1.4.0
-  convert: ^3.1.1
+  convert: ^3.1.2
   wallet: ^0.0.18
 
 dev_dependencies:
   test: ^1.25.0
-  lints: ^5.0.0
+  lints: ^6.0.0
   async: ^2.13.0

@@ -8,12 +8,11 @@
 [![sdk version](https://badgen.net/pub/sdk-version/web3dart)](https://pub.dartlang.org/packages/web3dart)
 
 
-A dart library that connects to interact with the Ethereum blockchain. It connects
-to an Ethereum node to send transactions, interact with smart contracts and much
-more!
+A Celo compatible Dart library to connect to Ethereum clients. Send transactions and interact with smart contracts! Pay transaction fees using `feeCurrencies` on Celo.
 
 ## Features
 
+- Celo compatible
 - Connect to an Ethereum node with the rpc-api, call common methods
 - Send signed Ethereum transactions
 - Generate private keys, setup new Ethereum addresses
